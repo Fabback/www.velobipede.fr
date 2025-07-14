@@ -1,10 +1,11 @@
 /* @import "tailwindcss"; */
+@import "tailwind-preset-mantine";
 
 /* https://tailwindcss.com/docs/preflight#disabling-preflight */
-@layer theme, base, components, utilities;
-@import "tailwindcss/theme.css" layer(theme);
+/* @layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme); */
 /* @import "tailwindcss/preflight.css" layer(base); */
-@import "tailwindcss/utilities.css" layer(utilities);
+/* @import "tailwindcss/utilities.css" layer(utilities); */
 
 /* 
 :root {
@@ -29,13 +30,25 @@
   h3 {
     color: var(--mantine-color-velobigreen-8);
   }
+
+  .mantine-Button-label {
+    font-weight: 400;
+  }
 }
 
 @layer components {
   .page-vertical-flow {
-    width: 100%;
-    min-width: 300px;
-    max-width: 800px;
+    width: 95%;
+    min-width: calc(var(--mantine-breakpoint-xs) * 0.9);
+    max-width: calc(var(--mantine-breakpoint-sm) * 1.1);
+
+    /* width: var(--mantine-breakpoint-xs); */
+    /*min-width: var(--mantine-breakpoint-xs); /*300px;*/
+    /*max-width: var(--mantine-breakpoint-sm); /*800px;*/
+    /* @media (width >= $mantine-breakpoint-sm) {
+      width: var(--mantine-breakpoint-sm);
+    } */
+
     @apply mx-auto;
   }
 }
