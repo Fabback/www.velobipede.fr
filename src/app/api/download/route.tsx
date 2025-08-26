@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
           break;
       }
 
-      return new Response(buffer, {
+      return new Response(Buffer.from(buffer), {
         headers,
       });
     })
