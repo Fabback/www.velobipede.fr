@@ -6,12 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "predeploy": "shx rm -rf ./.dist && shx mkdir ./.dist/",
-    "deploy": "next build && pnpm run copy-standalone && pnpm run copy-public && pnpm run copy-static",
-    "copy-standalone": "shx cp -RfL .next/standalone/ .dist/",
-    "copy-public": "copyfiles -a -V public/**/* .dist/",
-    "copy-static": "copyfiles -a .next/static/**/* .dist/",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "deploy": "next build && node ./deploy-standalone.js",
     "run_deploy": "node ./.dist/server.js"
   },
   "dependencies": {
@@ -38,6 +35,7 @@
     "shx": "^0.4.0",
     "tailwind-preset-mantine": "^2.1.0",
     "tailwindcss": "^4.1.12",
+    "postcss": "^8.5.6",
     "zod": "^3.25.76"
   },
   "devDependencies": {
@@ -48,17 +46,17 @@
     "eslint": "^9.34.0",
     "eslint-config-next": "^15.5.0",
     "eslint-config-prettier": "^10.1.8",
-    "postcss": "^8.5.6",
     "postcss-preset-mantine": "^1.18.0",
     "postcss-simple-vars": "^7.0.1",
     "typescript": "^5.9.2"
   },
-  "packageManager": "pnpm@10.15.0+sha512.486ebc259d3e999a4e8691ce03b5cac4a71cbeca39372a9b762cb500cfdf0873e2cb16abe3d951b1ee2cf012503f027b98b6584e4df22524e0c7450d9ec7aa7b",
+  "packageManager": "pnpm@10.19.0+sha512.c9fc7236e92adf5c8af42fd5bf1612df99c2ceb62f27047032f4720b33f8eacdde311865e91c411f2774f618d82f320808ecb51718bfa82c060c4ba7c76a32b8",
   "pnpm": {
     "ignoredBuiltDependencies": [
       "esbuild"
     ],
     "onlyBuiltDependencies": [
+      "@tailwindcss/oxide",
       "altcha",
       "esbuild",
       "sharp",
