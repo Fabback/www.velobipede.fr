@@ -3,7 +3,7 @@ import { Grid, GridCol, Title } from "@mantine/core";
 import IndexWelCome from "./_components/IndexWelcome";
 import ContactForm from "./_components/ContactForm";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className="">
       <IndexWelCome />

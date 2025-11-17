@@ -8,6 +8,7 @@ Réintégration du site depuis simple site vitrine html/CSS vers framework React
 
 ### Startup template
 
+- Next.js (version évolutive)
 - Typescript
 - ESLint
 - TailwindCSS
@@ -21,15 +22,15 @@ Réintégration du site depuis simple site vitrine html/CSS vers framework React
 
 #### 0.9
 
-- [ ] Transformation ancienne trame en composants React
+- [x] Transformation ancienne trame en composants React
 
 #### 1.0
 
 - [ ] Ajout formulaire de contact
   - [ ] Validation formulaire
-  - [ ] Interaction DB pour enregistrement saisie
-  - [ ] Envoi formulaire par email
-  - [ ] Securisation appel formulaire (ex: captcha)
+    - [x] Securisation appel formulaire (ex: captcha)
+    - [ ] Interaction DB pour enregistrement saisie
+    - [ ] Envoi formulaire par email
 
 #### 1.1
 
@@ -37,9 +38,9 @@ Réintégration du site depuis simple site vitrine html/CSS vers framework React
 - [ ] Ajout back
   - [ ] Route privée
     - [ ] Login / Logout...
-    - [ ] Dashboard
-  - [ ] Gestion appels authentifiés (API, Server Actions, ... tRPC ?)
-  - [ ] Gestion media
+    - [ ] Dashboard initial layout
+  - [ ] Gestion appels authentifiés (API, Server Actions)
+  - [ ] Gestion media / upload bucket S3 (Backblaze) avec preauth
   - [ ] Gestion produit
   - [ ] \(OPTIONNEL) Gestion catalogue ?
 - [ ] Ajout front

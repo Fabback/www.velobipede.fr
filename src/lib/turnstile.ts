@@ -1,44 +1,20 @@
-/*
-Turnstile token verification utility function
-*/
+import "server-only";
 
-interface TurnstileResponse {
-  success: boolean;
-  "error-codes"?: string[];
-}
+import { validateTurnstileToken } from "next-turnstile";
 
-interface TurnstileError {
-  message: string;
-  status: number;
-}
-
-export async function verifyTurnstileToken(
-  token: string,
-): Promise<TurnstileResponse | TurnstileError> {
+export async function validateToken(token: string) {
   try {
-    /* Worker URL for Turnstile verification */
-    const workerUrl = "/api/turnstile";
-
-    const verificationResponse = await fetch(workerUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ "cf-turnstile-response": token }),
+    const result = await validateTurnstileToken({
+      token,
+      secretKey: process.env.TURNSTILE_WIGDET_SECRET ?? "MISSING",
     });
 
-    const contentType = verificationResponse.headers.get("Content-Type") || "";
-    if (!contentType.includes("application/json")) {
-      throw new Error(`Expected JSON response but received: ${contentType}`);
+    if (result.success) {
+      // Token is valid
+      return true;
     }
-
-    const verificationResult = await verificationResponse.json();
-    return verificationResult;
   } catch (error) {
-    console.error("Error verifying Turnstile token:", error);
-    return {
-      message: "An error occurred during CAPTCHA verification.",
-      status: 500,
-    };
+    console.error("Validation failed:", error);
   }
+  return false;
 }

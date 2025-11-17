@@ -1,6 +1,6 @@
 {
   "name": "www.velobipede.fr",
-  "version": "0.1.0",
+  "version": "0.9.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,45 +12,48 @@
     "run_deploy": "node ./.dist/server.js"
   },
   "dependencies": {
-    "@conform-to/react": "^1.8.2",
-    "@conform-to/zod": "^1.8.2",
-    "@mantine/carousel": "^8.2.7",
-    "@mantine/core": "^8.2.7",
-    "@mantine/dates": "^8.2.7",
-    "@mantine/dropzone": "^8.2.7",
-    "@mantine/form": "^8.2.7",
-    "@mantine/hooks": "^8.2.7",
-    "@mantine/modals": "^8.2.7",
-    "@mantine/notifications": "^8.2.7",
-    "@tabler/icons-react": "^3.34.1",
-    "@tailwindcss/postcss": "^4.1.12",
-    "dayjs": "^1.11.13",
+    "@conform-to/react": "^1.13.3",
+    "@conform-to/zod": "^1.13.3",
+    "@mantine/carousel": "^8.3.8",
+    "@mantine/core": "^8.3.8",
+    "@mantine/dates": "^8.3.8",
+    "@mantine/dropzone": "^8.3.8",
+    "@mantine/form": "^8.3.8",
+    "@mantine/hooks": "^8.3.8",
+    "@mantine/modals": "^8.3.8",
+    "@mantine/notifications": "^8.3.8",
+    "@tabler/icons-react": "^3.35.0",
+    "@tailwindcss/postcss": "^4.1.17",
+    "dayjs": "^1.11.19",
     "embla-carousel-react": "^8.6.0",
-    "next": "^15.5.0",
+    "next": "16.0.1",
+    "next-turnstile": "^1.0.7",
+    "postcss": "^8.5.6",
     "prettier": "^3.6.2",
-    "prettier-plugin-tailwindcss": "^0.6.14",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
+    "prettier-plugin-tailwindcss": "^0.7.1",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "reflect-metadata": "^0.2.2",
     "server-only": "^0.0.1",
     "shx": "^0.4.0",
-    "tailwind-preset-mantine": "^2.1.0",
-    "tailwindcss": "^4.1.12",
-    "postcss": "^8.5.6",
-    "zod": "^3.25.76"
+    "tailwind-preset-mantine": "^3.0.2",
+    "tailwindcss": "^4.1.17",
+    "typeorm": "^0.3.27",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
-    "@types/node": "^20.19.11",
-    "@types/react": "^19.1.11",
-    "@types/react-dom": "^19.1.8",
-    "eslint": "^9.34.0",
-    "eslint-config-next": "^15.5.0",
+    "@types/node": "^20.19.25",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "16.0.1",
     "eslint-config-prettier": "^10.1.8",
     "postcss-preset-mantine": "^1.18.0",
     "postcss-simple-vars": "^7.0.1",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   },
-  "packageManager": "pnpm@10.19.0+sha512.c9fc7236e92adf5c8af42fd5bf1612df99c2ceb62f27047032f4720b33f8eacdde311865e91c411f2774f618d82f320808ecb51718bfa82c060c4ba7c76a32b8",
+  "packageManager": "pnpm@10.22.0+sha512.bf049efe995b28f527fd2b41ae0474ce29186f7edcb3bf545087bd61fbbebb2bf75362d1307fda09c2d288e1e499787ac12d4fcb617a974718a6051f2eee741c",
   "pnpm": {
     "ignoredBuiltDependencies": [
       "esbuild"
@@ -61,6 +64,10 @@
       "esbuild",
       "sharp",
       "unrs-resolver"
-    ]
+    ],
+    "overrides": {
+      "@types/react": "19.2.2",
+      "@types/react-dom": "19.2.2"
+    }
   }
 }

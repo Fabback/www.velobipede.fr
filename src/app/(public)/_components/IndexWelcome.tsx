@@ -1,39 +1,10 @@
-import DownloadButton from "@/components/DownloadButton";
-import {
-  Button,
-  ButtonProps,
-  Card,
-  Divider,
-  Grid,
-  GridCol,
-  PolymorphicComponentProps,
-  Space,
-  Title,
-} from "@mantine/core";
+import { Card, Divider, Grid, Title } from "@mantine/core";
 import { IconFileTypePdf, IconMail, IconPhone } from "@tabler/icons-react";
-import next from "next";
+
 import Image from "next/image";
-import Link from "next/link";
-import { ReactNode } from "react";
+import WelcomeButtonItem from "./WelcomeButtonItem";
 
-function WelcomeButtonItem({
-  children,
-  ...buttonProps
-}: PolymorphicComponentProps<typeof Link, ButtonProps>) {
-  return (
-    <GridCol span={{ base: 12, sm: 6 }}>
-      <Button
-        {...buttonProps}
-        component={Link}
-        className="block h-10 w-full text-sm font-normal"
-      >
-        {children}
-      </Button>
-    </GridCol>
-  );
-}
-
-export default function IndexWelCome() {
+export default async function IndexWelCome() {
   return (
     <div className="relative p-5">
       <div className="page-vertical-flow">
